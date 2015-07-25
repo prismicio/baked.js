@@ -53,7 +53,7 @@ function init(cfg) {
   if (!argOptions.dstDir) { argOptions.dstDir = argOptions.dst_dir; }
 
   var cliOptions = parseOptions();
-  var configuration = Configuration.readFromFileSync(_.assign(argOptions, cliOptions));
+  var configuration = Configuration.readFromFileSync(_.assign(cliOptions, argOptions));
 
   // supports gulpfiles using src_dir insteaf of srcDir from baked.config
   Object.defineProperty(configuration, "src_dir", {
